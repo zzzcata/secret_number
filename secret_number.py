@@ -1,10 +1,17 @@
-secret = 17
-guess = int(raw_input("What is the secret number?"))
+from random import randint
 
+secret = randint(0, 100)
 
-if secret == guess:
-    res = "Congratulations! You discovered the secret number!"
-else:
-    res = "This is not the secret number. Try again!"
+def main():
+    return guess == secret
 
-print res
+while True:
+    guess = int(raw_input("What is the secret number (between 0 and 100)? "))
+    if secret < guess:
+        print "This is not the secret number. The secret number is smaller than your guess!"
+    elif secret > guess:
+        print "This is not the secret number. The secret number is bigger than your guess!"
+    else:
+        print "Congratulations! You discovered the secret number!"
+        break
+
